@@ -120,7 +120,7 @@ bool QoiEncode(uint32_t width, uint32_t height, uint8_t channels, uint8_t colors
                         QoiWriteU8(((dr_dg + 8) << 4) | (db_dg + 8));
                     } else {
                         // Use RGB or RGBA
-                        if (a != pre_a || channels == 4) {
+                        if (a != pre_a) {
                             QoiWriteU8(QOI_OP_RGBA_TAG);
                             QoiWriteU8(r);
                             QoiWriteU8(g);
